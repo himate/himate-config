@@ -1,0 +1,10 @@
+dev_pass_file
+beta_pass_file
+live_pass_file
+live/admin/settings.json
+live/customer/settings.json
+live/merchant/settings.json
+beta/admin/settings.json
+beta/customer/settings.json
+beta/merchant/settings.json
+dev/settings.json
