@@ -80,8 +80,8 @@ function encrypt_files {
 
   for f in "${arr[@]}"
   do
-    echo "Encrypt ${f::-4} to $f"
-    openssl aes-256-cbc -k "`cat $pw`" -in ${f::-4} -e > $f
+    echo "Encrypt ${f::${#f}-4} to $f"
+    openssl aes-256-cbc -k "`cat $pw`" -in ${f::${#f}-4} -e > $f
   done
 }
 
@@ -95,8 +95,8 @@ function decrypt_files {
 
   for f in "${arr[@]}"
   do
-    echo "Decrypt $f to ${f::-4}"
-    openssl aes-256-cbc -k "`cat $pw`" -in $f -d > ${f::-4}
+    echo "Decrypt $f to ${f::${#f}-4}"
+    openssl aes-256-cbc -k "`cat $pw`" -in $f -d > ${f::${#f}-4}
   done
 }
 
